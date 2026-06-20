@@ -452,7 +452,7 @@ function Projects() {
 }
 
 function Experience() {
-  const ref = useReveal<HTMLDivElement>();
+  const ref = useReveal<HTMLOListElement>();
   return (
     <section id="experience" className="mx-auto max-w-6xl px-6 py-28">
       <SectionHeading kicker="04 — Experience" title="The road so far." />
