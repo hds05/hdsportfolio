@@ -78,14 +78,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Your Name — Full Stack Developer" },
-      { name: "description", content: "Personal portfolio of Your Name, a full stack developer crafting fast, thoughtful web products." },
+      { title: "HDS_Portfolio" },
+      { name: "description", content: "A modern, single-page developer portfolio showcasing skills, projects, and experience with interactive elements." },
       { name: "author", content: "Your Name" },
-      { property: "og:title", content: "Your Name — Full Stack Developer" },
-      { property: "og:description", content: "Personal portfolio of Your Name, a full stack developer crafting fast, thoughtful web products." },
+      { property: "og:title", content: "HDS_Portfolio" },
+      { property: "og:description", content: "A modern, single-page developer portfolio showcasing skills, projects, and experience with interactive elements." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "HDS_Portfolio" },
+      { name: "twitter:description", content: "A modern, single-page developer portfolio showcasing skills, projects, and experience with interactive elements." },
     ],
     links: [
       {
