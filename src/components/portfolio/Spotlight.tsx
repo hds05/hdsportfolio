@@ -13,7 +13,7 @@ type SpotlightProps = HTMLAttributes<HTMLDivElement> & {
  * subtle 3D tilt for cards.
  */
 export const Spotlight = forwardRef<HTMLDivElement, SpotlightProps>(function Spotlight(
-  { className, children, glow = "hsl(var(--primary) / 0.18)", size = 420, tilt = false, style, ...rest },
+  { className, children, glow = "oklch(0.88 0.11 82 / 0.22)", size = 420, tilt = false, style, ...rest },
   ref,
 ) {
   const innerRef = useRef<HTMLDivElement | null>(null);
@@ -68,7 +68,7 @@ export const Spotlight = forwardRef<HTMLDivElement, SpotlightProps>(function Spo
       }}
       className={cn(
         "group/spot relative isolate overflow-hidden transition-[transform,box-shadow,border-color] duration-500 ease-out",
-        "hover:shadow-[0_30px_80px_-30px_hsl(var(--primary)/0.35)]",
+        "hover:shadow-[0_30px_80px_-30px_oklch(0.82_0.13_78_/_0.45)]",
         className,
       )}
       {...rest}
