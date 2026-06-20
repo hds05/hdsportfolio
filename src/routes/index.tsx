@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Hero3D } from "@/components/portfolio/Hero3D";
 import { useReveal } from "@/components/portfolio/useReveal";
+import { Spotlight } from "@/components/portfolio/Spotlight";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -254,18 +255,26 @@ function Hero() {
             pixel.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href="#projects"
-              className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            <Spotlight
+              className="rounded-full"
+              glow="oklch(1 0 0 / 0.25)"
+              size={220}
             >
-              View my work
-            </a>
-            <a
-              href="#contact"
-              className="rounded-full border border-border px-6 py-3 text-sm text-foreground transition-colors hover:border-primary hover:text-primary"
-            >
-              Get in touch
-            </a>
+              <a
+                href="#projects"
+                className="block rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_18px_40px_-12px_oklch(0.82_0.13_78_/_0.7)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                View my work
+              </a>
+            </Spotlight>
+            <Spotlight className="rounded-full" size={220}>
+              <a
+                href="#contact"
+                className="block rounded-full border border-border px-6 py-3 text-sm text-foreground transition-all duration-300 hover:border-primary hover:text-primary hover:shadow-[0_18px_40px_-18px_oklch(0.82_0.13_78_/_0.6)]"
+              >
+                Get in touch
+              </a>
+            </Spotlight>
           </div>
           <ul className="mt-10 flex items-center gap-2">
             {SOCIALS.map(({ href, label, Icon }) => (
@@ -371,22 +380,24 @@ function Skills() {
       <SectionHeading kicker="02 — Skills" title="Tools of the trade." />
       <div ref={ref} className="reveal grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {Object.entries(SKILLS).map(([cat, items]) => (
-          <div
+          <Spotlight
             key={cat}
-            className="rounded-2xl border border-border bg-card/40 p-6 transition-colors hover:border-primary/40"
+            className="rounded-2xl border border-border bg-card/40 hover:border-primary/50 hover:-translate-y-1"
           >
-            <p className="font-mono-label mb-4">{cat}</p>
-            <ul className="flex flex-wrap gap-2">
-              {items.map((s) => (
-                <li
-                  key={s}
-                  className="rounded-full border border-border bg-background/40 px-3 py-1 text-sm text-foreground/90"
-                >
-                  {s}
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div className="p-6">
+              <p className="font-mono-label mb-4">{cat}</p>
+              <ul className="flex flex-wrap gap-2">
+                {items.map((s) => (
+                  <li
+                    key={s}
+                    className="rounded-full border border-border bg-background/40 px-3 py-1 text-sm text-foreground/90 transition-colors hover:border-primary/60 hover:text-primary"
+                  >
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Spotlight>
         ))}
       </div>
     </section>
@@ -400,10 +411,13 @@ function Projects() {
       <SectionHeading kicker="03 — Selected work" title="Things I've built." />
       <div ref={ref} className="reveal grid grid-cols-1 gap-8 md:grid-cols-2">
         {PROJECTS.map((p) => (
-          <article
+          <Spotlight
             key={p.title}
-            className="group relative overflow-hidden rounded-2xl border border-border bg-card/40 transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-card)]"
+            tilt
+            size={520}
+            className="group rounded-2xl border border-border bg-card/40 hover:border-primary/50 hover:-translate-y-1"
           >
+            <article>
             <div className="aspect-[16/10] overflow-hidden">
               <img
                 src={p.img}
@@ -444,7 +458,8 @@ function Projects() {
                 </a>
               </div>
             </div>
-          </article>
+            </article>
+          </Spotlight>
         ))}
       </div>
     </section>
@@ -530,12 +545,9 @@ function Contact() {
             ))}
           </ul>
         </div>
-        <form
-          onSubmit={onSubmit}
-          className="rounded-2xl border border-border bg-card/40 p-6 sm:p-8"
-          noValidate
-        >
-          <div className="grid grid-cols-1 gap-5">
+        <Spotlight className="rounded-2xl border border-border bg-card/40 hover:border-primary/40">
+          <form onSubmit={onSubmit} className="p-6 sm:p-8" noValidate>
+            <div className="grid grid-cols-1 gap-5">
             <div>
               <Label htmlFor="name" className="font-mono-label">Name</Label>
               <Input id="name" name="name" required className="mt-2 bg-background/40" />
@@ -551,12 +563,13 @@ function Contact() {
             <Button
               type="submit"
               disabled={submitting}
-              className="mt-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
+              className="mt-2 rounded-full bg-primary text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:scale-[1.02] hover:shadow-[0_18px_40px_-12px_oklch(0.82_0.13_78_/_0.7)]"
             >
               {submitting ? "Sending..." : "Send message"}
             </Button>
-          </div>
-        </form>
+            </div>
+          </form>
+        </Spotlight>
       </div>
     </section>
   );
