@@ -88,32 +88,32 @@ const SKILLS: Record<string, string[]> = {
     "VS Code",
   ],
 };
-const CERTIFICATES = [
-  {
-    title: "AI For Business Leaders Bootcamp",
-    issuer: "Outskill",
-    date: "2026",
-    img: "outskill.png",
-    credential:
-      "https://api.growthschool.io/certificate/20afe27c-87af-41d1-bc2a-b84ff09bc042/outskill",
-  },
-  {
-    title: "Full stack development with AI",
-    issuer: "Internshala Training",
-    date: "2026",
-    img: "Internshala.png",
-    // credential:
-    //   "https://trainings.internshala.com/verify_certificate",
-  },
-  {
-    title: "Full stack development specialization with AI",
-    issuer: "Skill Inida- NSDC",
-    date: "2026",
-    img: "NSDC-internshala-img.png",
-    // credential:
-    //   "file:///D:/Internshala/Internshala%20certificates/CAN_38926281_5301860.pdf",
-  },
-];
+// const CERTIFICATES = [
+//   {
+//     title: "AI For Business Leaders Bootcamp",
+//     issuer: "Outskill",
+//     date: "2026",
+//     img: "outskill.png",
+//     credential:
+//       "https://api.growthschool.io/certificate/20afe27c-87af-41d1-bc2a-b84ff09bc042/outskill",
+//   },
+//   {
+//     title: "Full stack development with AI",
+//     issuer: "Internshala Training",
+//     date: "2026",
+//     img: "Internshala.png",
+//     // credential:
+//     //   "https://trainings.internshala.com/verify_certificate",
+//   },
+//   {
+//     title: "Full stack development specialization with AI",
+//     issuer: "Skill Inida- NSDC",
+//     date: "2026",
+//     img: "NSDC-internshala-img.png",
+//     // credential:
+//     //   "file:///D:/Internshala/Internshala%20certificates/CAN_38926281_5301860.pdf",
+//   },
+// ];
 const PROJECTS = [
   {
     title: "AI-Chatbot",
@@ -204,7 +204,7 @@ function Index() {
         <About />
         <Skills />
         <Projects />
-        <Certificates />
+        {/* <Certificates /> */}
         <Experience />
         <Contact />
       </main>
@@ -549,63 +549,63 @@ function Projects() {
   );
 }
 
-function Certificates() {
-  const ref = useReveal<HTMLDivElement>();
+// function Certificates() {
+//   const ref = useReveal<HTMLDivElement>();
 
-  return (
-    <section
-      id="certificates"
-      className="mx-auto max-w-6xl px-6 py-28"
-    >
-      <SectionHeading
-        kicker="04 — Certifications"
-        title="Proof of continuous learning."
-      />
+//   return (
+//     <section
+//       id="certificates"
+//       className="mx-auto max-w-6xl px-6 py-28"
+//     >
+//       <SectionHeading
+//         kicker="04 — Certifications"
+//         title="Proof of continuous learning."
+//       />
 
-      <div
-        ref={ref}
-        className="reveal mt-12 flex flex-wrap justify-center gap-10"
-      >
-        {CERTIFICATES.map((cert, index) => (
-          <a
-            key={cert.title}
-            href={cert.credential}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`
-              relative w-[320px]
-              transition-all duration-500
-              hover:z-20 hover:scale-105 hover:rotate-0
-              ${index % 2 === 0 ? "-rotate-3" : "rotate-3"}
-            `}
-          >
-            <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
-              <img
-                src={cert.img}
-                alt={cert.title}
-                className="h-[220px] w-full object-cover"
-              />
+//       <div
+//         ref={ref}
+//         className="reveal mt-12 flex flex-wrap justify-center gap-10"
+//       >
+//         {CERTIFICATES.map((cert, index) => (
+//           <a
+//             key={cert.title}
+//             href={cert.credential}
+//             target="_blank"
+//             rel="noopener noreferrer"
+//             className={`
+//               relative w-[320px]
+//               transition-all duration-500
+//               hover:z-20 hover:scale-105 hover:rotate-0
+//               ${index % 2 === 0 ? "-rotate-3" : "rotate-3"}
+//             `}
+//           >
+//             <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
+//               <img
+//                 src={cert.img}
+//                 alt={cert.title}
+//                 className="h-[220px] w-full object-cover"
+//               />
 
-              <div className="p-5">
-                <h3 className="font-display text-lg">
-                  {cert.title}
-                </h3>
+//               <div className="p-5">
+//                 <h3 className="font-display text-lg">
+//                   {cert.title}
+//                 </h3>
 
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {cert.issuer}
-                </p>
+//                 <p className="mt-1 text-sm text-muted-foreground">
+//                   {cert.issuer}
+//                 </p>
 
-                <p className="mt-3 text-xs text-primary">
-                  View Credential →
-                </p>
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
-    </section>
-  );
-}
+//                 <p className="mt-3 text-xs text-primary">
+//                   View Credential →
+//                 </p>
+//               </div>
+//             </div>
+//           </a>
+//         ))}
+//       </div>
+//     </section>
+//   );
+// }
 
 function Experience() {
   const ref = useReveal<HTMLOListElement>();
