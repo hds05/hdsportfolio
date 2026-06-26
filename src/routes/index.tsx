@@ -25,20 +25,46 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your Name — Full Stack Developer" },
+      { title: "Himanshu Dutt Sharma — Full Stack Developer" },
       {
         name: "description",
         content:
-          "Portfolio of Your Name — a full stack developer building thoughtful, performant web products end-to-end.",
+          "Portfolio of Himanshu Dutt Sharma — a full stack developer building responsive, user-friendly web applications with React, Node.js, and MongoDB.",
       },
-      { property: "og:title", content: "Your Name — Full Stack Developer" },
+      { property: "og:title", content: "Himanshu Dutt Sharma — Full Stack Developer" },
       {
         property: "og:description",
-        content: "Portfolio, projects, and contact for Your Name.",
+        content: "Projects, experience, and contact info for Himanshu Dutt Sharma — full stack developer based in Jaipur, India.",
       },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Person",
+              name: "Himanshu Dutt Sharma",
+              jobTitle: "Full Stack Developer",
+              url: "https://hdsportfolio.lovable.app",
+              sameAs: [
+                "https://github.com/hds05",
+                "https://www.linkedin.com/in/himanshu-dutt-sharma-9769191b1",
+                "https://leetcode.com/u/himanshudutt/",
+              ],
+            },
+            {
+              "@type": "WebSite",
+              name: "Himanshu Dutt Sharma — Portfolio",
+              url: "https://hdsportfolio.lovable.app",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: Index,
 });
@@ -304,6 +330,7 @@ function Hero() {
           </p>
           <h1 className="font-display text-5xl leading-[0.95] sm:text-6xl md:text-7xl">
             Himanshu <span className="italic text-primary">Dutt</span> Sharma
+            <span className="sr-only"> — Full Stack Developer</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
             Motivated Full Stack Web Developer with hands-on experience in front-end and back-end
