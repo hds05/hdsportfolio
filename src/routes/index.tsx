@@ -611,7 +611,8 @@ function Experience() {
   const ref = useReveal<HTMLOListElement>();
   return (
     <section id="experience" className="mx-auto max-w-6xl px-6 py-28">
-      <SectionHeading kicker="05 — Experience" title="The road so far." />
+      <SectionHeading kicker="04 — Experience" title="The road so far." />
+      {/* <SectionHeading kicker="05 — Experience" title="The road so far." /> */}
       <ol ref={ref} className="reveal relative ml-3 border-l border-border">
         {TIMELINE.map((e, i) => (
           <li key={i} className="relative pl-8 pb-12 last:pb-0">
@@ -658,7 +659,8 @@ function Contact() {
 
   return (
     <section id="contact" className="mx-auto max-w-6xl px-6 py-28">
-      <SectionHeading kicker="06 — Contact" title="Let's build something." />
+      {/* <SectionHeading kicker="06 — Contact" title="Let's build something." /> */}
+      <SectionHeading kicker="05 — Contact" title="Let's build something." />
       <div ref={ref} className="reveal grid grid-cols-1 gap-12 md:grid-cols-2">
         <div>
           <p className="text-lg text-muted-foreground">
