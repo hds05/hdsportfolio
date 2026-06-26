@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Github,
   Linkedin,
@@ -489,11 +490,18 @@ function Skills() {
 
 function Projects() {
   const ref = useReveal<HTMLDivElement>();
+  const [page, setPage] = useState(0);
+
+  const CARDS_PER_PAGE = 2;
+  const totalPages = Math.ceil(PROJECTS.length / CARDS_PER_PAGE);
+  const paginated = PROJECTS.slice(page * CARDS_PER_PAGE, (page + 1) * CARDS_PER_PAGE);
+
   return (
     <section id="projects" className="mx-auto max-w-6xl px-6 py-28">
       <SectionHeading kicker="03 — Selected work" title="Things I've built." />
+
       <div ref={ref} className="reveal grid grid-cols-1 gap-8 md:grid-cols-2">
-        {PROJECTS.map((p) => (
+        {paginated.map((p) => (
           <Spotlight
             key={p.title}
             tilt
@@ -545,6 +553,44 @@ function Projects() {
           </Spotlight>
         ))}
       </div>
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="mt-10 flex items-center justify-center gap-3">
+          <button
+            onClick={() => setPage((p) => p - 1)}
+            disabled={page === 0}
+            className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:pointer-events-none disabled:opacity-30"
+            aria-label="Previous page"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </button>
+
+          {Array.from({ length: totalPages }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setPage(i)}
+              className={`h-9 w-9 rounded-full border text-sm transition-colors ${
+                i === page
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border text-muted-foreground hover:border-primary hover:text-primary"
+              }`}
+              aria-label={`Page ${i + 1}`}
+            >
+              {i + 1}
+            </button>
+          ))}
+
+          <button
+            onClick={() => setPage((p) => p + 1)}
+            disabled={page === totalPages - 1}
+            className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:pointer-events-none disabled:opacity-30"
+            aria-label="Next page"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
+        </div>
+      )}
     </section>
   );
 }
@@ -634,28 +680,34 @@ function Contact() {
   const ref = useReveal<HTMLDivElement>();
   const [submitting, setSubmitting] = useState(false);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const data = new FormData(form);
-    const name = String(data.get("name") || "").trim();
-    const email = String(data.get("email") || "").trim();
-    const message = String(data.get("message") || "").trim();
-    if (!name || !email || !message) {
-      toast.error("Please fill in all fields.");
-      return;
-    }
-    if (!/^\S+@\S+\.\S+$/.test(email)) {
-      toast.error("Please enter a valid email.");
-      return;
-    }
-    setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      toast.success("Message sent — I'll get back to you soon.");
-      form.reset();
-    }, 700);
-  };
+ const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  const form = e.currentTarget;
+  const data = new FormData(form);
+  const name = String(data.get("name") || "").trim();
+  const email = String(data.get("email") || "").trim();
+  const message = String(data.get("message") || "").trim();
+
+  if (!name || !email || !message) {
+    toast.error("Please fill in all fields.");
+    return;
+  }
+  if (!/^\S+@\S+\.\S+$/.test(email)) {
+    toast.error("Please enter a valid email.");
+    return;
+  }
+
+  const phone = import.meta.env.VITE_WHATSAPP_NUMBER
+
+  const text = `Hi, I'm ${name} (${email}).\n\n${message}`;
+
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
+  window.open(url, "_blank");
+
+  toast.success("Opening WhatsApp — send the message there!");
+  form.reset();
+};
 
   return (
     <section id="contact" className="mx-auto max-w-6xl px-6 py-28">
@@ -688,7 +740,7 @@ function Contact() {
             ))}
           </ul>
         </div>
-        <Spotlight className="rounded-2xl border border-border bg-card/40 hover:border-primary/40">
+        {/* <Spotlight className="rounded-2xl border border-border bg-card/40 hover:border-primary/40">
           <form onSubmit={onSubmit} className="p-6 sm:p-8" noValidate>
             <div className="grid grid-cols-1 gap-5">
               <div>
@@ -730,7 +782,7 @@ function Contact() {
               </Button>
             </div>
           </form>
-        </Spotlight>
+        </Spotlight> */}
       </div>
     </section>
   );
