@@ -1,0 +1,6 @@
+[build]
+  command = "bun run build"
+
+# Nitro's "netlify" preset emits a Netlify Functions handler plus a static
+# `dist/` directory and the routing rules Netlify needs. Netlify auto-detects
+# the output, so we only need to set the build command here.
