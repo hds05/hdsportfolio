@@ -1,7 +1,6 @@
 [build]
   command = "bun run build"
-  publish = "dist"
 
-# Nitro's "netlify" preset emits a Netlify Functions handler that serves SSR
-# plus all static assets. No extra redirects are needed — the preset wires
-# them up automatically during the build.
+# Nitro's "netlify" preset emits a Netlify Functions handler plus a static
+# `dist/` directory and the routing rules Netlify needs. Netlify auto-detects
+# the output, so we only need to set the build command here.
