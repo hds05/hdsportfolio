@@ -330,6 +330,7 @@ function Hero() {
           </p>
           <h1 className="font-display text-5xl leading-[0.95] sm:text-6xl md:text-7xl">
             Himanshu <span className="italic text-primary">Dutt</span> Sharma
+            <span className="sr-only"> — Full Stack Developer</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
             Motivated Full Stack Web Developer with hands-on experience in front-end and back-end
