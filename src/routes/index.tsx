@@ -64,7 +64,7 @@ const SKILLS: Record<string, string[]> = {
     "HTML5",
     "CSS3",
     "JavaScript (ES6+)",
-    "TypeScript",
+    // "TypeScript",
     "React",
     "Next.js",
     "Redux Toolkit",
@@ -156,6 +156,12 @@ const PROJECTS = [
     live: "https://todolistflow.netlify.app/",
     repo: "https://github.com/hds05/To-Do-Flow.git"
   },
+  {
+  title: "More Coming Soon",
+  desc: "This portfolio is still growing — more creative projects, experiments, and polished builds are on the way.",
+  tags: ["And much more...", "Stay tuned", "More to explore"],
+  img: "https://pplx-res.cloudinary.com/image/upload/t_thumbnail_512_smart/pplx_search_images/72749590c77cb6f05259182bd6d91b07dedc149b.jpg",
+}
 ];
 
 const TIMELINE = [
@@ -314,8 +320,8 @@ function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Spotlight tilt className="p-4 rounded-full" glow="oklch(1 0 0 / 0.25)" size={220}>
               <a
-                href="/hds_Profile.pdf"
-                download={"Himanshu_Profile.pdf"}
+                href="/Himanshu-Profile.pdf"
+                download={"Himanshu-Profile.pdf"}
                 className="block rounded-full  hover:text-primary border border-border hover:font-bold px-6 py-3 text-sm font-medium  transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_18px_40px_-12px_oklch(0.82_0.13_78_/_0.7)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 Download Resume
@@ -446,9 +452,9 @@ function About() {
               <MapPin className="h-4 w-4 text-primary" /> Jaipur, Rajasthan, India | Open to Remote
               Opportunities
             </span>
-            <span className="flex items-center gap-2">
+            {/* <span className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-primary" /> duttsharmahimanshu96@gmail.com
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
