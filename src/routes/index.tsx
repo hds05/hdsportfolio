@@ -347,8 +347,8 @@ function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Spotlight tilt className="p-4 rounded-full" glow="oklch(1 0 0 / 0.25)" size={220}>
               <a
-                href="/Himanshu-Profile.pdf"
-                download={"Himanshu-Profile.pdf"}
+                href="/HimanshuDutt_Profile.pdf"
+                download={"HimanshuDutt-Profile.pdf"}
                 className="block rounded-full  hover:text-primary border border-border hover:font-bold px-6 py-3 text-sm font-medium  transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_18px_40px_-12px_oklch(0.82_0.13_78_/_0.7)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 Download Resume
