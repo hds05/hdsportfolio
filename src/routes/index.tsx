@@ -34,7 +34,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Himanshu Dutt Sharma — Full Stack Developer" },
       {
         property: "og:description",
-        content: "Projects, experience, and contact info for Himanshu Dutt Sharma — full stack developer based in Jaipur, India.",
+        content:
+          "Projects, experience, and contact info for Himanshu Dutt Sharma — full stack developer based in Jaipur, India.",
       },
       { property: "og:url", content: "/" },
     ],
@@ -148,15 +149,24 @@ const PROJECTS = [
     tags: ["React.js", "OpenAI API", "ThreeJS", "ExpressJS", "NodeJS"],
     img: "AI-chatbot.png",
     live: "https://ai-chatbot-frontend-git-main-hds05s-projects.vercel.app/",
-    repo: "https://github.com/hds05/AI_ChatBot.git"
+    repo: "https://github.com/hds05/AI_ChatBot.git",
   },
   {
     title: "Youtube-Clone",
     desc: "A full-stack video platform with secure JWT authentication, video uploads, search functionality, and a responsive YouTube-inspired interface.",
-    tags: ["React.js", "React-Router-DOM", "Axios", "Vite", "Tailwind css", "MongoDB", "jwt Auth", "NodeJS"],
+    tags: [
+      "React.js",
+      "React-Router-DOM",
+      "Axios",
+      "Vite",
+      "Tailwind css",
+      "MongoDB",
+      "jwt Auth",
+      "NodeJS",
+    ],
     img: "youtube_clone.png",
     live: "https://youtube-clone-frontend-iota-seven.vercel.app/",
-    repo: "https://github.com/hds05/Youtube_Clone_Frontend.git"
+    repo: "https://github.com/hds05/Youtube_Clone_Frontend.git",
   },
   {
     title: "Wheather Forcast Application",
@@ -164,7 +174,7 @@ const PROJECTS = [
     tags: ["JavaScript", "Tailwind css", "Responsive design", "openweather API"],
     img: "weatherforecastupdate.png",
     live: "https://weatherlyforecastupdate.netlify.app/",
-    repo: ""
+    repo: "",
   },
   {
     title: "ANIME.Utopia",
@@ -172,7 +182,7 @@ const PROJECTS = [
     tags: ["ReactJS", "Firebase", "Responsive Design"],
     img: "animeUtopia.png",
     live: "https://animationreview.netlify.app/",
-    repo: "https://github.com/hds05/aniwatch.git"
+    repo: "https://github.com/hds05/aniwatch.git",
   },
   {
     title: "To-Do-Flow",
@@ -180,14 +190,29 @@ const PROJECTS = [
     tags: ["Javascript", "localstorage", "Responsive design"],
     img: "to-do-flow.jpeg",
     live: "https://todolistflow.netlify.app/",
-    repo: "https://github.com/hds05/To-Do-Flow.git"
+    repo: "https://github.com/hds05/To-Do-Flow.git",
   },
+{
+  title: "Shoppy Globe",
+  desc: "A modern e-commerce application featuring API-driven product browsing, custom hooks, Redux-powered cart management, search and category filtering, lazy loading, and a fully responsive shopping experience.",
+  tags: [
+    "React.js",
+    "Redux Toolkit",
+    "React Router",
+    "Axios",
+    "Custom Hooks",
+    "Tailwind CSS"
+  ],
+  img: "shoppyGlobe.png",
+  live: "https://shoppy-globe-git-master-hds05s-projects.vercel.app/",
+  repo: "https://github.com/hds05/Shoppy-Globe.git"
+},
   {
-  title: "More Coming Soon",
-  desc: "This portfolio is still growing — more creative projects, experiments, and polished builds are on the way.",
-  tags: ["And much more...", "Stay tuned", "More to explore"],
-  img: "https://pplx-res.cloudinary.com/image/upload/t_thumbnail_512_smart/pplx_search_images/72749590c77cb6f05259182bd6d91b07dedc149b.jpg",
-}
+    title: "More Coming Soon",
+    desc: "This portfolio is still growing — more creative projects, experiments, and polished builds are on the way.",
+    tags: ["And much more...", "Stay tuned", "More to explore"],
+    img: "https://pplx-res.cloudinary.com/image/upload/t_thumbnail_512_smart/pplx_search_images/72749590c77cb6f05259182bd6d91b07dedc149b.jpg",
+  },
 ];
 
 const TIMELINE = [
@@ -354,7 +379,7 @@ function Hero() {
                 Download Resume
               </a>
             </Spotlight>
-            <Spotlight tilt className="p-4 rounded-full"  glow="oklch(1 0 0 / 0.25)" size={220}>
+            <Spotlight tilt className="p-4 rounded-full" glow="oklch(1 0 0 / 0.25)" size={220}>
               <a
                 href="#contact"
                 className="block rounded-full border border-border px-6 py-3 text-sm text-foreground transition-all duration-300 hover:scale-105 hover:border-primary hover:text-primary hover:shadow-[0_18px_40px_-18px_oklch(0.82_0.13_78_/_0.6)]"
@@ -380,23 +405,22 @@ function Hero() {
           </ul>
         </div>
         <div className="order-1 flex justify-center md:order-2">
-            <Spotlight tilt>
-          <div className="relative">
-            <div className="absolute -inset-6 rounded-2xl bg-[var(--gradient-glow)] blur-2xl" />
-            <div className="relative h-56 w-56 rounded-2xl border border-primary/30 p-[3px] shadow-[var(--shadow-glow)] sm:h-[400px] sm:w-72">
-
-              <div className="h-full w-full overflow-hidden rounded-2xl border border-border bg-card">
-                <img
-                  src="/hds-2.jpeg"
-                  alt="Portrait of Your Name"
-                  className="h-full w-full object-cover"
-                  loading="eager"
+          <Spotlight tilt>
+            <div className="relative">
+              <div className="absolute -inset-6 rounded-2xl bg-[var(--gradient-glow)] blur-2xl" />
+              <div className="relative h-56 w-56 rounded-2xl border border-primary/30 p-[3px] shadow-[var(--shadow-glow)] sm:h-[400px] sm:w-72">
+                <div className="h-full w-full overflow-hidden rounded-2xl border border-border bg-card">
+                  <img
+                    src="/hds-2.jpeg"
+                    alt="Portrait of Your Name"
+                    className="h-full w-full object-cover"
+                    loading="eager"
                   />
+                </div>
+                <div className="absolute inset-0 -z-10 rounded-full border border-primary/20" />
               </div>
-              <div className="absolute inset-0 -z-10 rounded-full border border-primary/20" />
             </div>
-          </div>
-                  </Spotlight>
+          </Spotlight>
         </div>
       </div>
 
@@ -435,16 +459,16 @@ function About() {
       <SectionHeading kicker="01 — About" title="A bit about me." />
       <div ref={ref} className="reveal grid grid-cols-1 items-center gap-12 md:grid-cols-5">
         <div className="md:col-span-2">
-            <div className="relative mx-auto max-w-sm">
-          <Spotlight tilt className="">
+          <div className="relative mx-auto max-w-sm">
+            <Spotlight tilt className="">
               <div className="absolute -inset-2 rounded-2xl border border-primary/25 overflow-hidden" />
               <img
                 src="/hds-work.jpeg"
                 alt="A second portrait of Your Name"
                 className="relative aspect-[4/5] w-full rounded-2xl border border-border object-cover"
               />
-          </Spotlight>
-            </div>
+            </Spotlight>
+          </div>
         </div>
         <div className="md:col-span-3">
           <p className="text-lg leading-relaxed text-muted-foreground">
@@ -460,7 +484,8 @@ function About() {
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
               When I’m not coding, I’m probably debugging something I wrote at 2 a.m. the night
               before. Always learning, always building! I care about thoughtful UX, clean APIs, and
-              shipping. Outside of work you'll find me playing guitar, singing, sketching and occasionally testing my chess skills online..
+              shipping. Outside of work you'll find me playing guitar, singing, sketching and
+              occasionally testing my chess skills online..
             </p>
           )}
 
@@ -713,34 +738,34 @@ function Contact() {
   const ref = useReveal<HTMLDivElement>();
   const [submitting, setSubmitting] = useState(false);
 
- const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  const form = e.currentTarget;
-  const data = new FormData(form);
-  const name = String(data.get("name") || "").trim();
-  const email = String(data.get("email") || "").trim();
-  const message = String(data.get("message") || "").trim();
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get("name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const message = String(data.get("message") || "").trim();
 
-  if (!name || !email || !message) {
-    toast.error("Please fill in all fields.");
-    return;
-  }
-  if (!/^\S+@\S+\.\S+$/.test(email)) {
-    toast.error("Please enter a valid email.");
-    return;
-  }
+    if (!name || !email || !message) {
+      toast.error("Please fill in all fields.");
+      return;
+    }
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+      toast.error("Please enter a valid email.");
+      return;
+    }
 
-  const phone = import.meta.env.VITE_WHATSAPP_NUMBER
+    const phone = import.meta.env.VITE_WHATSAPP_NUMBER;
 
-  const text = `Hi, I'm ${name} (${email}).\n\n${message}`;
+    const text = `Hi, I'm ${name} (${email}).\n\n${message}`;
 
-  const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 
-  window.open(url, "_blank");
+    window.open(url, "_blank");
 
-  toast.success("Opening WhatsApp — send the message there!");
-  form.reset();
-};
+    toast.success("Opening WhatsApp — send the message there!");
+    form.reset();
+  };
 
   return (
     <section id="contact" className="mx-auto max-w-6xl px-6 py-28">
@@ -749,7 +774,7 @@ function Contact() {
       <div ref={ref} className="reveal grid grid-cols-1 gap-12 md:grid-cols-2">
         <div>
           <p className="text-lg text-muted-foreground">
-            Have a project in mind, a role to discuss, or just want to say hi? My inbox is open. 
+            Have a project in mind, a role to discuss, or just want to say hi? My inbox is open.
           </p>
           <a
             href="mailto:duttsharmahimanshu96@gmail.com"
