@@ -80,7 +80,7 @@ const NAV_LINKS = [
 
 const SOCIALS = [
   { href: "https://github.com/hds05", label: "GitHub", Icon: Github },
-  { href: "www.linkedin.com/in/himanshu-dutt-sharma-9769191b1", label: "LinkedIn", Icon: Linkedin },
+  { href: "https://www.linkedin.com/in/himanshu-dutt-sharma-9769191b1/", label: "LinkedIn", Icon: Linkedin },
   { href: "https://leetcode.com/u/himanshudutt/", label: "LeetCode", Icon: Code2 },
   { href: "https://instagram.com/yourusername", label: "Instagram", Icon: Instagram },
 ];
