@@ -412,7 +412,7 @@ function Hero() {
                 <div className="h-full w-full overflow-hidden rounded-2xl border border-border bg-card">
                   <img
                     src="/hds-2.jpeg"
-                    alt="Portrait of Your Name"
+                    alt="HimanshuDutt Img"
                     className="h-full w-full object-cover"
                     loading="eager"
                   />
@@ -464,7 +464,7 @@ function About() {
               <div className="absolute -inset-2 rounded-2xl border border-primary/25 overflow-hidden" />
               <img
                 src="/hds-work.jpeg"
-                alt="A second portrait of Your Name"
+                alt="HimanshuDutt Img"
                 className="relative aspect-[4/5] w-full rounded-2xl border border-border object-cover"
               />
             </Spotlight>
