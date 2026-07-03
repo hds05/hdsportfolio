@@ -82,7 +82,7 @@ const SOCIALS = [
   { href: "https://github.com/hds05", label: "GitHub", Icon: Github },
   { href: "https://www.linkedin.com/in/himanshu-dutt-sharma-9769191b1/", label: "LinkedIn", Icon: Linkedin },
   { href: "https://leetcode.com/u/himanshudutt/", label: "LeetCode", Icon: Code2 },
-  { href: "https://instagram.com/yourusername", label: "Instagram", Icon: Instagram },
+  // { href: "https://instagram.com/yourusername", label: "Instagram", Icon: Instagram },
 ];
 
 const SKILLS: Record<string, string[]> = {
