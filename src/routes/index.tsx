@@ -411,7 +411,7 @@ function Hero() {
               <div className="relative h-56 w-56 rounded-2xl border border-primary/30 p-[3px] shadow-[var(--shadow-glow)] sm:h-[400px] sm:w-72">
                 <div className="h-full w-full overflow-hidden rounded-2xl border border-border bg-card">
                   <img
-                    src="/hds-2.jpeg"
+                    src="/HDS-Professional_Img.png"
                     alt="HimanshuDutt Img"
                     className="h-full w-full object-cover"
                     loading="eager"
@@ -501,8 +501,7 @@ function About() {
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-primary" /> Jaipur, Rajasthan, India | Open to Remote
-              Opportunities
+              <MapPin className="h-4 w-4 text-primary" /> Jaipur, Rajasthan, India | Open for Opportunities
             </span>
             {/* <span className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-primary" /> duttsharmahimanshu96@gmail.com
