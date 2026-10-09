@@ -86,10 +86,10 @@ const SOCIALS = [
 ];
 
 const SKILLS: Record<string, string[]> = {
-  Languages: ["TypeScript", "JavaScript"],
+  Languages: ["TypeScript", "JavaScript", "HTML5",
+    "CSS3",],
   Frontend: [
-    "HTML5",
-    "CSS3",
+    
     "JavaScript (ES6+)",
     // "TypeScript",
     "React",
